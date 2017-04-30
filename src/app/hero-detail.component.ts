@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 
-import { Hero } from './hero';
+import { Hero } from './core/hero';
 
 @Component({
   selector: 'hero-detail',
-  templateUrl: './hero-detail.component.html'
+  templateUrl: './hero-detail.component.html',
+  styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent {
   @Input() hero: Hero;
