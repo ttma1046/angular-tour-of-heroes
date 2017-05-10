@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Hero } from './hero';
 
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+
+import { Logger } from './logger.service';
+
+import { Hero } from './hero';
 
 @Injectable()
 export class HeroService {
     private heroesUrl = 'api/heroes';
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private logger: Logger) {
         // code...
     }
 
