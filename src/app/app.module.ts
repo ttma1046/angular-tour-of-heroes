@@ -10,8 +10,12 @@ import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroSearchComponent } from './hero-search.component';
+import { HeroFormComponent } from './hero-form.component';
+import { SizerComponent } from './sizer.component';
+import { HolaComponent } from './hola.component';
 
 import { HeroService } from './core/hero.service';
+import { Logger } from './core/logger.service';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './external/in-memory-data.service';
@@ -29,11 +33,15 @@ import { InMemoryDataService } from './external/in-memory-data.service';
     HeroesComponent,
     HeroDetailComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    HeroFormComponent,
+    SizerComponent,
+    HolaComponent
   ],
   bootstrap: [ AppComponent ],
   providers: [
-    HeroService
+    HeroService,
+    Logger
   ]
 })
 export class AppModule { }

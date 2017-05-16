@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Hero } from './core/hero';
 import { HeroService } from './core/hero.service';
@@ -12,6 +12,10 @@ import { HeroService } from './core/hero.service';
 export class DashboardComponent implements OnInit {
 	heroes: Hero[] = [];
 
+	OutputSize: number = 20;
+
+	fontSizePx: number = 15;
+
 	constructor(private heroService: HeroService) {
 		// code...
 	}
@@ -21,4 +25,7 @@ export class DashboardComponent implements OnInit {
 			.then(heroes => this.heroes = heroes.slice(1, 5));
 	}
 
+	output(size: number): void {
+		this.OutputSize = size;
+	}
 }

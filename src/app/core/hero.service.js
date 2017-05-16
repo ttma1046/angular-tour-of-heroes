@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/toPromise");
+var logger_service_1 = require("./logger.service");
 var HeroService = (function () {
-    function HeroService(http) {
+    function HeroService(http, logger) {
         this.http = http;
+        this.logger = logger;
         this.heroesUrl = 'api/heroes';
         this.headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         // code...
@@ -67,7 +69,7 @@ var HeroService = (function () {
 }());
 HeroService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http, logger_service_1.Logger])
 ], HeroService);
 exports.HeroService = HeroService;
 //# sourceMappingURL=hero.service.js.map

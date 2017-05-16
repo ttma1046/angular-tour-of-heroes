@@ -15,7 +15,11 @@ var dashboard_component_1 = require("./dashboard.component");
 var heroes_component_1 = require("./heroes.component");
 var hero_detail_component_1 = require("./hero-detail.component");
 var hero_search_component_1 = require("./hero-search.component");
+var hero_form_component_1 = require("./hero-form.component");
+var sizer_component_1 = require("./sizer.component");
+var hola_component_1 = require("./hola.component");
 var hero_service_1 = require("./core/hero.service");
+var logger_service_1 = require("./core/logger.service");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_data_service_1 = require("./external/in-memory-data.service");
 var AppModule = (function () {
@@ -37,11 +41,15 @@ AppModule = __decorate([
             heroes_component_1.HeroesComponent,
             hero_detail_component_1.HeroDetailComponent,
             dashboard_component_1.DashboardComponent,
-            hero_search_component_1.HeroSearchComponent
+            hero_search_component_1.HeroSearchComponent,
+            hero_form_component_1.HeroFormComponent,
+            sizer_component_1.SizerComponent,
+            hola_component_1.HolaComponent
         ],
         bootstrap: [app_component_1.AppComponent],
         providers: [
-            hero_service_1.HeroService
+            hero_service_1.HeroService,
+            logger_service_1.Logger
         ]
     })
 ], AppModule);
