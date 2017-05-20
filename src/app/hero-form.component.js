@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var hero_1 = require("./core/hero");
+var hero_1 = require("./hero/hero");
 var HeroFormComponent = (function () {
     function HeroFormComponent() {
         this.powers = ['Really Smart', 'Super FLexible', 'Super Hot', 'Weather Changer'];

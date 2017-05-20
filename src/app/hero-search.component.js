@@ -18,7 +18,7 @@ require("rxjs/add/observable/of");
 require("rxjs/add/operator/catch");
 require("rxjs/add/operator/debounceTime");
 require("rxjs/add/operator/distinctUntilChanged");
-var hero_search_service_1 = require("./core/hero-search.service");
+var hero_search_service_1 = require("./hero/hero-search.service");
 var HeroSearchComponent = (function () {
     function HeroSearchComponent(heroSearchService, router) {
         this.heroSearchService = heroSearchService;

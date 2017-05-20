@@ -1,11 +1,24 @@
 "use strict";
-var Logger = (function () {
-    function Logger() {
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var core_1 = require("@angular/core");
+var LoggerService = (function () {
+    function LoggerService() {
     }
-    Logger.prototype.log = function (msg) { console.log(msg); };
-    Logger.prototype.error = function (msg) { console.error(msg); };
-    Logger.prototype.warn = function (msg) { console.warn(msg); };
-    return Logger;
+    LoggerService.prototype.log = function (msg) {
+        console.log(msg);
+    };
+    LoggerService.prototype.error = function (msg) {
+        console.error(msg);
+    };
+    return LoggerService;
 }());
-exports.Logger = Logger;
+LoggerService = __decorate([
+    core_1.Injectable()
+], LoggerService);
+exports.LoggerService = LoggerService;
 //# sourceMappingURL=logger.service.js.map

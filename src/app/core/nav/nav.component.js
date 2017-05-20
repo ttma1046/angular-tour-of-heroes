@@ -9,24 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var hero_service_1 = require("./hero/hero.service");
-var HeroListComponent = (function () {
-    function HeroListComponent(service) {
-        this.service = service;
+var NavComponent = (function () {
+    function NavComponent() {
+        this.menuItems = [
+            'Heroes',
+            'Villains',
+            'Other'
+        ];
     }
-    HeroListComponent.prototype.ngOnInit = function () {
-        // this.heroes = this.service.getHeroes();
-    };
-    HeroListComponent.prototype.selectHero = function (hero) { this.selectedHero = hero; };
-    return HeroListComponent;
+    NavComponent.prototype.ngOnInit = function () { };
+    return NavComponent;
 }());
-HeroListComponent = __decorate([
+NavComponent = __decorate([
     core_1.Component({
-        selector: 'hero-list',
-        templateUrl: './hero-list.component.html',
-        providers: [hero_service_1.HeroService]
+        selector: 'toh-nav',
+        templateUrl: './nav.component.html',
+        styleUrls: ['./nav.component.css'],
     }),
-    __metadata("design:paramtypes", [hero_service_1.HeroService])
-], HeroListComponent);
-exports.HeroListComponent = HeroListComponent;
-//# sourceMappingURL=hero-list.component.js.map
+    __metadata("design:paramtypes", [])
+], NavComponent);
+exports.NavComponent = NavComponent;
+//# sourceMappingURL=nav.component.js.map

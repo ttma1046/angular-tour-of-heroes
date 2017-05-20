@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.modules';
+import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard.component';
@@ -14,8 +15,8 @@ import { HeroFormComponent } from './hero-form.component';
 import { SizerComponent } from './sizer.component';
 import { HolaComponent } from './hola.component';
 
-import { HeroService } from './core/hero.service';
-import { Logger } from './core/logger.service';
+import { HeroService } from './hero/hero.service';
+import { Logger } from './hero/logger.service';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './external/in-memory-data.service';
@@ -27,6 +28,7 @@ import { InMemoryDataService } from './external/in-memory-data.service';
     AppRoutingModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
+    CoreModule
   ],
   declarations: [
     AppComponent,
