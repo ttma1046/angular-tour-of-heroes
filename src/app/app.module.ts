@@ -16,7 +16,7 @@ import { SizerComponent } from './sizer.component';
 import { HolaComponent } from './hola.component';
 
 import { HeroService } from './hero/hero.service';
-import { Logger } from './hero/logger.service';
+import { Logger } from './logger.service';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './external/in-memory-data.service';
@@ -43,7 +43,8 @@ import { InMemoryDataService } from './external/in-memory-data.service';
   bootstrap: [ AppComponent ],
   providers: [
     HeroService,
-    Logger
+    Logger,
+    // { provide: APP_CONFIG, useValue: HERO_DI_CONFIG }
   ]
 })
 export class AppModule { }
