@@ -8,26 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var car_1 = require("./car");
-var Engine2_1 = require("./Engine2");
-var tires_1 = require("./tires");
-var app_config_1 = require("../app-config");
-var Consumer = (function () {
-    function Consumer(config) {
-        this.bigCylinders = 12;
-        this.title = config.title;
-        var car = new car_1.Car(new Engine2_1.Engine2(this.bigCylinders), new tires_1.Tires());
+var hero_service_1 = require("./hero.service");
+var HeroListComponent = (function () {
+    function HeroListComponent(heroService) {
+        this.heroes = heroService.getHeroes();
     }
-    return Consumer;
+    return HeroListComponent;
 }());
-Consumer = __decorate([
-    __param(0, core_1.Inject(app_config_1.APP_CONFIG)),
-    __metadata("design:paramtypes", [Object])
-], Consumer);
-exports.Consumer = Consumer;
-//# sourceMappingURL=consumer.js.map
+HeroListComponent = __decorate([
+    core_1.Component({
+        selector: 'hero-list',
+        template: "\n  <div *ngFor=\"let hero of heroes\">\n    {{hero.id}} - {{hero.name}}\n  </div>\n  "
+    }),
+    __metadata("design:paramtypes", [hero_service_1.HeroService])
+], HeroListComponent);
+exports.HeroListComponent = HeroListComponent;
+//# sourceMappingURL=hero-list.component.js.map

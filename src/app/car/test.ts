@@ -1,12 +1,16 @@
 import { Engine } from './engine';
 import { Tires } from './tires';
 import { Car } from './car';
+import { HeroService } from '../../heroes/hero.service';
+import { HeroListComponent } from '../hero-list.component';
 
 export class Test {
-    constructor() {
-        let car = new Car(new MockEngine(), new MockTires());
-    }
+    let car = new Car(new MockEngine(), new MockTires());
 
+    constructor() {
+        // code...
+    }
+    
     let expectedHeroes = [{name: 'A'}, {name: 'B'}];
 
     let mockService = <HeroService> { getHeroes: () => expectedHeroes };

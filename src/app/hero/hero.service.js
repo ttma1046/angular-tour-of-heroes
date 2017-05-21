@@ -70,7 +70,8 @@ var HeroService = (function () {
 }());
 HeroService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, logger_service_1.Logger])
+    __metadata("design:paramtypes", [http_1.Http, typeof (_a = typeof logger_service_1.Logger !== "undefined" && logger_service_1.Logger) === "function" && _a || Object])
 ], HeroService);
 exports.HeroService = HeroService;
+var _a;
 //# sourceMappingURL=hero.service.js.map

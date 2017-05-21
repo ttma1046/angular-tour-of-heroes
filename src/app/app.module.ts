@@ -20,6 +20,12 @@ import { Logger } from './logger.service';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './external/in-memory-data.service';
+import { APP_CONFIG, HERO_DI_CONFIG } from './app-config';
+
+let silentLogger = {
+  logs: ['Silent logger says "Shhh!". Provided via "useValue"'],
+  log: () => {}
+};
 
 @NgModule({
   imports: [
@@ -44,7 +50,35 @@ import { InMemoryDataService } from './external/in-memory-data.service';
   providers: [
     HeroService,
     Logger,
-    // { provide: APP_CONFIG, useValue: HERO_DI_CONFIG }
+    // UserService,
+    // NewLogger,
+    // { provide: Logger, useClass: EvenBetterLogger },
+    // { provide: Logger, useClass: Logger },
+    // { provide: Logger, useClass: BetterLogger },
+    // { provide: Logger, useExisting: NewLogger },
+    { provide: APP_CONFIG, useValue: HERO_DI_CONFIG },
+    { provide: Logger, useValue: silentLogger }
   ]
 })
 export class AppModule { }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

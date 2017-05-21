@@ -21,9 +21,14 @@ var hero_form_component_1 = require("./hero-form.component");
 var sizer_component_1 = require("./sizer.component");
 var hola_component_1 = require("./hola.component");
 var hero_service_1 = require("./hero/hero.service");
-var logger_service_1 = require("./hero/logger.service");
+var logger_service_1 = require("./logger.service");
 var angular_in_memory_web_api_1 = require("angular-in-memory-web-api");
 var in_memory_data_service_1 = require("./external/in-memory-data.service");
+var app_config_1 = require("./app-config");
+var silentLogger = {
+    logs: ['Silent logger says "Shhh!". Provided via "useValue"'],
+    log: function () { }
+};
 var AppModule = (function () {
     function AppModule() {
     }
@@ -52,7 +57,15 @@ AppModule = __decorate([
         bootstrap: [app_component_1.AppComponent],
         providers: [
             hero_service_1.HeroService,
-            logger_service_1.Logger
+            logger_service_1.Logger,
+            // UserService,
+            // NewLogger,
+            // { provide: Logger, useClass: EvenBetterLogger },
+            // { provide: Logger, useClass: Logger },
+            // { provide: Logger, useClass: BetterLogger },
+            // { provide: Logger, useExisting: NewLogger },
+            { provide: app_config_1.APP_CONFIG, useValue: app_config_1.HERO_DI_CONFIG },
+            { provide: logger_service_1.Logger, useValue: silentLogger }
         ]
     })
 ], AppModule);

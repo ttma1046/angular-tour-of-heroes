@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var Engine2 = (function () {
     function Engine2(cylinders) {
         this.cylinders = cylinders;
-        // super(cylinders);
     }
     return Engine2;
 }());

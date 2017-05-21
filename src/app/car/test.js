@@ -20,6 +20,12 @@ var Test = (function () {
     return Test;
 }());
 exports.Test = Test;
+var expectedHeroes = [{ name: 'A' }, { name: 'B' }];
+var mockService = { getHeroes: function () { return expectedHeroes; } };
+it('should have heroes when HeroListComponent created', function () {
+    var hlc = new HeroListComponent(mockService);
+    expect(hlc.heroes.length).toEqual(expectedHeroes.length);
+});
 var MockEngine = (function (_super) {
     __extends(MockEngine, _super);
     function MockEngine() {

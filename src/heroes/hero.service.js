@@ -8,26 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var car_1 = require("./car");
-var Engine2_1 = require("./Engine2");
-var tires_1 = require("./tires");
-var app_config_1 = require("../app-config");
-var Consumer = (function () {
-    function Consumer(config) {
-        this.bigCylinders = 12;
-        this.title = config.title;
-        var car = new car_1.Car(new Engine2_1.Engine2(this.bigCylinders), new tires_1.Tires());
+var mock_heroes_1 = require("./mock-heroes");
+var logger_service_1 = require("../app/logger.service");
+var HeroService = (function () {
+    function HeroService(logger, isAuthorized) {
+        this.logger = logger;
+        this.isAuthorized = isAuthorized;
     }
-    return Consumer;
+    HeroService.prototype.getHeroes = function () {
+        var _this = this;
+        var auth = this.isAuthorized ? 'authorized' : 'unauthorized';
+        this.logger.log("Getting heroes for " + auth + " user");
+        return mock_heroes_1.HEROES.filter(function (hero) { return _this.isAuthorized || !hero.isSecret; });
+    };
+    return HeroService;
 }());
-Consumer = __decorate([
-    __param(0, core_1.Inject(app_config_1.APP_CONFIG)),
-    __metadata("design:paramtypes", [Object])
-], Consumer);
-exports.Consumer = Consumer;
-//# sourceMappingURL=consumer.js.map
+HeroService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [logger_service_1.Logger, Boolean])
+], HeroService);
+exports.HeroService = HeroService;
+//# sourceMappingURL=hero.service.js.map
